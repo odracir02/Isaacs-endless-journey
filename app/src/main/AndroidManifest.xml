@@ -12,7 +12,19 @@
         android:theme="@style/Theme.IsaacsEndlessJourney"
         tools:targetApi="31">
         <activity
-            android:name=".StartView"
+            android:name=".ShopActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UnlocksActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
