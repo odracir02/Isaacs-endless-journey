@@ -11,30 +11,30 @@
         android:id="@+id/textView"
         android:layout_width="220dp"
         android:layout_height="132dp"
-        android:fontFamily="@font/IsaacGame"
+        android:fontFamily="@font/isaacgame"
         android:text="HOLA ESPARSA"
         android:textSize="48sp"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="127dp" />
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="150dp" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="220dp"
-        android:layout_height="132dp"
+        android:layout_width="346dp"
+        android:layout_height="93dp"
         android:fontFamily="@font/upheavtt"
-        android:text="HOLA ESPARSA"
+        android:text="por que te vas"
         android:textSize="48sp"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="366dp" />
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="405dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="245dp"
         android:layout_height="102dp"
-        android:fontFamily="@font/IsaacGame"
+        android:fontFamily="@font/isaacgame"
         android:text="hola esparsa"
         android:textSize="48sp"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="247dp" />
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="282dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
