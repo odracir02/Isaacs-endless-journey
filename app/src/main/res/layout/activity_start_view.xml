@@ -7,4 +7,34 @@
     android:background="#d5c9c4"
     tools:context=".StartView">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="220dp"
+        android:layout_height="132dp"
+        android:fontFamily="@font/IsaacGame"
+        android:text="HOLA ESPARSA"
+        android:textSize="48sp"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="127dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="220dp"
+        android:layout_height="132dp"
+        android:fontFamily="@font/upheavtt"
+        android:text="HOLA ESPARSA"
+        android:textSize="48sp"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="366dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="245dp"
+        android:layout_height="102dp"
+        android:fontFamily="@font/IsaacGame"
+        android:text="hola esparsa"
+        android:textSize="48sp"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="247dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
