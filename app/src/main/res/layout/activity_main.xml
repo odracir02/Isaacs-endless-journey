@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/scarred_womb"
@@ -73,14 +74,14 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivIsaacClicker"
         android:layout_width="195dp"
         android:layout_height="343dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kisspng_the_binding_of_isaac_afterbirth_plus_video_games_file_isaac_app_png_binding_of_isaac_rebirth_wik_5b62fdf86aa634_6649775615332142004369" />
+        app:srcCompat="@drawable/isaac_clicker" />
 
     <Button
         android:id="@+id/btnClicker"
