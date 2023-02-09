@@ -5,4 +5,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="fondo">#d5c9c4</color>
+    <color name="letra_oscura_papel">#36302b</color>
 </resources>

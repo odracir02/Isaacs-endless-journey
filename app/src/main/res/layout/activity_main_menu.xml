@@ -11,65 +11,80 @@
         android:id="@+id/tvTitle"
         android:layout_width="279dp"
         android:layout_height="141dp"
-        android:fontFamily="@font/IsaacGame"
+        android:fontFamily="@font/isaacgame"
         android:text="Isaac's Endless Journey"
         android:textAlignment="center"
+        android:textColor="@color/letra_oscura_papel"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        app:layout_constraintVertical_bias="0.091" />
 
-    <Button
-        android:id="@+id/btnStart"
-        android:layout_width="216dp"
-        android:layout_height="59dp"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/upheavtt"
-        android:onClick="start"
-        android:text="Start"
-        android:textColor="#625C5A"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="382dp"
+        android:layout_height="658dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555" />
+        app:srcCompat="@drawable/main_fondo" />
 
     <Button
         android:id="@+id/btnUnlocks"
         android:layout_width="272dp"
         android:layout_height="70dp"
         android:background="@android:color/transparent"
-        android:fontFamily="@font/upheavtt"
+        android:fontFamily="@font/isaacgame"
         android:onClick="unlocks"
+        android:rotation="10"
         android:text="Unlocks"
-        android:textColor="#625C5A"
-        android:textSize="48sp"
+        android:textColor="@color/letra_oscura_papel"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.359"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673" />
+        app:layout_constraintVertical_bias="0.676" />
 
     <Button
         android:id="@+id/btnSettings"
         android:layout_width="302dp"
         android:layout_height="70dp"
         android:background="@android:color/transparent"
-        android:fontFamily="@font/upheavtt"
+        android:fontFamily="@font/isaacgame"
         android:onClick="settings"
+        android:rotation="10"
         android:text="Settings"
-        android:textColor="#625C5A"
+        android:textColor="@color/letra_oscura_papel"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.782" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="282dp"
+        android:layout_height="86dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/isaacgame"
+        android:onClick="start"
+        android:rotation="10"
+        android:text="Start"
+        android:textColor="@color/letra_oscura_papel"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.804" />
+        app:layout_constraintVertical_bias="0.474" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
