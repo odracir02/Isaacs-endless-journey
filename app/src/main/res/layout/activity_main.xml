@@ -40,6 +40,14 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/btnMain"
+                android:layout_width="62dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:text="M" />
+
+            <Button
                 android:id="@+id/btnShop"
                 android:layout_width="62dp"
                 android:layout_height="match_parent"
@@ -54,14 +62,6 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:text="A" />
-
-            <Button
-                android:id="@+id/btnMain"
-                android:layout_width="62dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:text="M" />
 
             <Button
                 android:id="@+id/btnSettings"
