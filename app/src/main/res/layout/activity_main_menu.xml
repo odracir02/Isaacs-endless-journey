@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d5c9c4"
+    android:background="@color/fondo"
     tools:context=".MainMenuActivity">
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="279dp"
         android:layout_height="141dp"
-        android:fontFamily="@font/isaacgame"
+        android:fontFamily="@font/IsaacGame"
         android:text="Isaac's Endless Journey"
         android:textAlignment="center"
         android:textSize="48sp"

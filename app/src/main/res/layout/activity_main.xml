@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/scarred_womb"
     tools:context=".MainActivity">
 
 
@@ -13,60 +14,83 @@
         android:layout_height="47dp"
         android:fontFamily="@font/upheavtt"
         android:text="00"
+        android:textAlignment="center"
         android:textSize="48sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnClicker"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.194" />
-
-    <Button
-        android:id="@+id/btnClicker"
-        android:layout_width="184dp"
-        android:layout_height="206dp"
-        android:layout_marginTop="64dp"
-        android:text="CLICK"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_bias="0.127" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo_menu"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnShop"
                 android:layout_width="62dp"
-                android:layout_height="52dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:text="SH" />
 
             <Button
                 android:id="@+id/btnUnlocks"
                 android:layout_width="62dp"
-                android:layout_height="52dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:text="A" />
 
             <Button
                 android:id="@+id/btnMain"
                 android:layout_width="62dp"
-                android:layout_height="52dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:text="M" />
 
             <Button
                 android:id="@+id/btnSettings"
                 android:layout_width="62dp"
-                android:layout_height="52dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:text="SE" />
         </LinearLayout>
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="195dp"
+        android:layout_height="343dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kisspng_the_binding_of_isaac_afterbirth_plus_video_games_file_isaac_app_png_binding_of_isaac_rebirth_wik_5b62fdf86aa634_6649775615332142004369" />
+
+    <Button
+        android:id="@+id/btnClicker"
+        android:layout_width="409dp"
+        android:layout_height="590dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.014" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
