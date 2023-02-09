@@ -4,6 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d5c9c4"
     tools:context=".MainMenuActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="279dp"
+        android:layout_height="141dp"
+        android:fontFamily="@font/IsaacGame"
+        android:text="Isaac's Endless Journey"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="216dp"
+        android:layout_height="59dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/upheavtt"
+        android:onClick="start"
+        android:text="Start"
+        android:textColor="#625C5A"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.555" />
+
+    <Button
+        android:id="@+id/btnUnlocks"
+        android:layout_width="272dp"
+        android:layout_height="70dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/upheavtt"
+        android:onClick="unlocks"
+        android:text="Unlocks"
+        android:textColor="#625C5A"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673" />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="302dp"
+        android:layout_height="70dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/upheavtt"
+        android:onClick="setting"
+        android:text="Settings"
+        android:textColor="#625C5A"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.804" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

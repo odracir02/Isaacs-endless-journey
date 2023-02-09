@@ -11,7 +11,7 @@
         android:id="@+id/tvTitle"
         android:layout_width="282dp"
         android:layout_height="107dp"
-        android:fontFamily="@font/isaacgame"
+        android:fontFamily="@font/IsaacGame"
         android:text="ISAAC STUDIOS"
         android:textAlignment="center"
         android:textSize="48sp"

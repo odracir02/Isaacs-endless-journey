@@ -5,15 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final long SPLASH_TIEMPO = 10000;
+    private static final long SPLASH_TIEMPO = 2000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_view);
+        setContentView(R.layout.activity_splash_view);
         new Handler().postDelayed(new Runnable(){
 
             @Override
