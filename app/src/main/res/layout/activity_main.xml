@@ -7,4 +7,66 @@
     tools:context=".MainActivity">
 
 
+    <TextView
+        android:id="@+id/tvCoins"
+        android:layout_width="132dp"
+        android:layout_height="47dp"
+        android:fontFamily="@font/upheavtt"
+        android:text="00"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnClicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <Button
+        android:id="@+id/btnClicker"
+        android:layout_width="184dp"
+        android:layout_height="206dp"
+        android:layout_marginTop="64dp"
+        android:text="CLICK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnShop"
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:text="SH" />
+
+            <Button
+                android:id="@+id/btnUnlocks"
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:text="A" />
+
+            <Button
+                android:id="@+id/btnMain"
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="M" />
+
+            <Button
+                android:id="@+id/btnSettings"
+                android:layout_width="62dp"
+                android:layout_height="52dp"
+                android:text="SE" />
+        </LinearLayout>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

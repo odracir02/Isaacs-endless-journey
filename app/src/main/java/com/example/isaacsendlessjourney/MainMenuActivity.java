@@ -24,7 +24,7 @@ public class MainMenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void setting(View view) {
+    public void settings(View view) {
         Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
         startActivity(intent);
     }
