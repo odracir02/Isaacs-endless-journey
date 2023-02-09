@@ -11,8 +11,8 @@
 
     <TextView
         android:id="@+id/tvCoins"
-        android:layout_width="132dp"
-        android:layout_height="47dp"
+        android:layout_width="233dp"
+        android:layout_height="52dp"
         android:fontFamily="@font/upheavtt"
         android:text="00"
         android:textAlignment="center"
@@ -39,6 +39,7 @@
         android:layout_width="409dp"
         android:layout_height="590dp"
         android:background="@android:color/transparent"
+        android:onClick="click"
         android:text="."
         android:textColor="#00000000"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -51,11 +52,13 @@
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="616dp"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/fondo_menu" />
 
     <ImageView
@@ -138,11 +141,11 @@
         app:srcCompat="@drawable/smb" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnHome"
         android:layout_width="86dp"
         android:layout_height="81dp"
         android:background="@android:color/transparent"
-        android:onClick="Main"
+        android:onClick="intentMain"
         android:text="."
         android:textColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
@@ -153,11 +156,11 @@
         app:layout_constraintVertical_bias="0.974" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnShop"
         android:layout_width="86dp"
         android:layout_height="81dp"
         android:background="@android:color/transparent"
-        android:onClick="Shop"
+        android:onClick="intentShop"
         android:text="."
         android:textColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
@@ -168,11 +171,11 @@
         app:layout_constraintVertical_bias="0.974" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnSettings"
         android:layout_width="100dp"
         android:layout_height="81dp"
         android:background="@android:color/transparent"
-        android:onClick="settings"
+        android:onClick="intentSettings"
         android:text="."
         android:textColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
