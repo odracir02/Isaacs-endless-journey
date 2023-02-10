@@ -11,7 +11,7 @@
         android:id="@+id/tvTitle"
         android:layout_width="279dp"
         android:layout_height="141dp"
-        android:fontFamily="@font/isaacgame"
+        android:fontFamily="@font/isaacfont"
         android:text="Isaac's Endless Journey"
         android:textAlignment="center"
         android:textColor="@color/letra_oscura_papel"
@@ -38,7 +38,7 @@
         android:layout_width="272dp"
         android:layout_height="70dp"
         android:background="@android:color/transparent"
-        android:fontFamily="@font/isaacgame"
+        android:fontFamily="@font/isaacfont"
         android:onClick="unlocks"
         android:rotation="10"
         android:text="Unlocks"
@@ -56,7 +56,7 @@
         android:layout_width="302dp"
         android:layout_height="70dp"
         android:background="@android:color/transparent"
-        android:fontFamily="@font/isaacgame"
+        android:fontFamily="@font/isaacfont"
         android:onClick="settings"
         android:rotation="10"
         android:text="Settings"
@@ -74,7 +74,7 @@
         android:layout_width="282dp"
         android:layout_height="86dp"
         android:background="@android:color/transparent"
-        android:fontFamily="@font/isaacgame"
+        android:fontFamily="@font/isaacfont"
         android:onClick="start"
         android:rotation="10"
         android:text="Start"
@@ -86,5 +86,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.474" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.299"
+        app:srcCompat="@drawable/mosca" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.357"
+        app:srcCompat="@drawable/mosca" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.927"
+        app:srcCompat="@drawable/mosca" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

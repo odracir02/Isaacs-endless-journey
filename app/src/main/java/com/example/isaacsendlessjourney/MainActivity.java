@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private int coins = 0;
-    private int clickValue = 3;
+    private int clickValue = 50000;
     private int clickMultiplier = 1;
 
     private TextView tvCoins;
