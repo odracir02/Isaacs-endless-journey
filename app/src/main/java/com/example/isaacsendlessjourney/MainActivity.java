@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -23,8 +24,13 @@ public class MainActivity extends AppCompatActivity {
     private Button btnShop;
     private Button btnSettings;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Hide navbar
+        hideNavbar();
+
         // Prevent dark mode
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
@@ -87,8 +93,11 @@ public class MainActivity extends AppCompatActivity {
     * MENU
     */
     public void intentMain(View view) {
-        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-        startActivity(intent);
+        System.out.println(this.getClass().getSimpleName());
+        if(!this.getClass().getSimpleName().equals("MainActivity")) {
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void intentShop(View view) {
@@ -99,5 +108,20 @@ public class MainActivity extends AppCompatActivity {
     public void intentSettings(View view) {
         Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
         startActivity(intent);
+    }
+
+    /*
+     * UTILS
+     */
+    public void hideNavbar() {
+        if(Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) { // lower api
+            View v = this.getWindow().getDecorView();
+            v.setSystemUiVisibility(View.GONE);
+        } else if(Build.VERSION.SDK_INT >= 19) {
+            //for new api versions.
+            View decorView = getWindow().getDecorView();
+            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+            decorView.setSystemUiVisibility(uiOptions);
+        }
     }
 }
