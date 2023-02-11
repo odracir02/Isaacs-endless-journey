@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private int coins = 0;
-    private int clickValue = 50000;
+    private int clickValue = 43531245;
     private int clickMultiplier = 1;
 
     private TextView tvCoins;
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Million
         if(strCoin.length() > 6) {
-            finalStr = strCoin.substring(0,(strCoin.length() - 3) - 3) + "." + strCoin.substring((strCoin.length() - 3) - 2,(strCoin.length() - 3) - 1) + "M";
+            finalStr = strCoin.substring(0,(strCoin.length() - 1) - 5) + "." + strCoin.substring((strCoin.length() - 1) - 5,(strCoin.length() - 1) - 3) + "M";
 
             return finalStr;
         }

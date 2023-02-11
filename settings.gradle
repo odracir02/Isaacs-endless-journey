@@ -5,12 +5,12 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-dependencyResolutionManagement {
+/*dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
     }
-}
+}*/
 rootProject.name = "Isaac's Endless Journey"
 include ':app'
