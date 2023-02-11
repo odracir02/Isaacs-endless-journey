@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "316954190581",
+    "project_id": "isaacs-endless-journey",
+    "storage_bucket": "isaacs-endless-journey.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:316954190581:android:28c69757801735336bdbbc",
+        "android_client_info": {
+          "package_name": "com.example.isaacsendlessjourney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "316954190581-qtkmmqn0jqb03cjntt9n3phsg1i6mq8j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.isaacsendlessjourney",
+            "certificate_hash": "f706a721c8e167f825fc32036b80223fbf20f8a4"
+          }
+        },
+        {
+          "client_id": "316954190581-gn2ropgq5s6i2193ka3r1iql5bo1n4qs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe7qSaENos7jrZr7_azTLYS_fdiMZ11N8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "316954190581-gn2ropgq5s6i2193ka3r1iql5bo1n4qs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

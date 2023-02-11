@@ -36,8 +36,8 @@
 
     <Button
         android:id="@+id/btnClicker"
-        android:layout_width="409dp"
-        android:layout_height="590dp"
+        android:layout_width="412dp"
+        android:layout_height="642dp"
         android:background="@android:color/transparent"
         android:onClick="click"
         android:text="."
@@ -150,10 +150,10 @@
         android:textColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.974" />
+        app:layout_constraintVertical_bias="0.992" />
 
     <Button
         android:id="@+id/btnShop"
@@ -168,7 +168,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.974" />
+        app:layout_constraintVertical_bias="0.989" />
 
     <Button
         android:id="@+id/btnSettings"
@@ -183,6 +183,6 @@
         app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
+        app:layout_constraintVertical_bias="0.992" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
