@@ -19,6 +19,8 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -39,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
     // Firebase
     FirebaseFirestore db;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         btnShop = findViewById(R.id.btnShop);
         btnSettings = findViewById(R.id.btnSettings);
 
+        // Firebase
         db = FirebaseFirestore.getInstance();
     }
 
@@ -136,8 +137,6 @@ public class MainActivity extends AppCompatActivity {
         /*Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
         startActivity(intent);*/
 
-
-
         // Create a new user with a first and last name
         Map<String, Object> saveData = new HashMap<>();
         saveData.put("coins", this.coins);
@@ -147,24 +146,6 @@ public class MainActivity extends AppCompatActivity {
         this.db.collection("user_data")
                 .document("test")
                 .set(saveData);
-
-        // Add a new document with a generated ID
-        /*this.db.collection("user_data")
-                .add(saveData)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        System.out.println("subido correctamente");
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        System.out.println("la cague :(");
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });*/
     }
 
     /*
