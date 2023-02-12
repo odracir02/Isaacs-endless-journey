@@ -1,16 +1,29 @@
 package com.example.isaacsendlessjourney;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     private int coins = 0;
@@ -106,8 +119,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void intentSettings(View view) {
-        Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
+        startActivity(intent);*/
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Create a new user with a first and last name
+        Map<String, Object> saveData = new HashMap<>();
+        saveData.put("coins", this.coins);
+        saveData.put("coins_click", this.clickValue);
+        saveData.put("multiplier", this.clickMultiplier);
+
+        // Add a new document with a generated ID
+        db.collection("user_data")
+                .add(saveData)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        System.out.println("subido correctamente");
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        System.out.println("la cague :(");
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
     }
 
     /*
