@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btnShop;
     private Button btnSettings;
 
+    // Firebase
+    FirebaseFirestore db;
+
 
 
     @Override
@@ -65,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         btnHome = findViewById(R.id.btnHome);
         btnShop = findViewById(R.id.btnShop);
         btnSettings = findViewById(R.id.btnSettings);
+
+        db = FirebaseFirestore.getInstance();
     }
 
     /*
@@ -114,15 +119,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void intentShop(View view) {
-        Intent intent = new Intent(getApplicationContext(),ShopActivity.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(getApplicationContext(),ShopActivity.class);
+        startActivity(intent);*/
+        Map<String, Object> saveData = new HashMap<>();
+        saveData.put("coins", 15);
+        saveData.put("coins_click", 50);
+        saveData.put("multiplier", 20);
+
+        this.db.collection("user_data")
+                .document("test")
+                .update(saveData);
+
     }
 
     public void intentSettings(View view) {
         /*Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
         startActivity(intent);*/
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
         // Create a new user with a first and last name
         Map<String, Object> saveData = new HashMap<>();
@@ -130,8 +144,12 @@ public class MainActivity extends AppCompatActivity {
         saveData.put("coins_click", this.clickValue);
         saveData.put("multiplier", this.clickMultiplier);
 
+        this.db.collection("user_data")
+                .document("test")
+                .set(saveData);
+
         // Add a new document with a generated ID
-        db.collection("user_data")
+        /*this.db.collection("user_data")
                 .add(saveData)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
@@ -146,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("la cague :(");
                         Log.w(TAG, "Error adding document", e);
                     }
-                });
+                });*/
     }
 
     /*
