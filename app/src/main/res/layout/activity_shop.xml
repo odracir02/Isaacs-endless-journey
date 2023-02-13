@@ -59,6 +59,7 @@
                         android:fontFamily="@font/upheavtt"
                         android:paddingTop="50px"
                         android:text="Items from angel pool"
+                        android:textColor="#f7e7ce"
                         android:textSize="20sp"
                         app:emojiCompatEnabled="false" />
 
@@ -117,6 +118,7 @@
                         android:fontFamily="@font/upheavtt"
                         android:paddingTop="50px"
                         android:text="Items from devil pool"
+                        android:textColor="#Bb0c0c"
                         android:textSize="20sp"
                         app:emojiCompatEnabled="false" />
 
@@ -174,6 +176,7 @@
                         android:fontFamily="@font/upheavtt"
                         android:paddingTop="50px"
                         android:text="Items from item pool"
+                        android:textColor="#e0a51c"
                         android:textSize="20sp"
                         app:emojiCompatEnabled="false" />
 
