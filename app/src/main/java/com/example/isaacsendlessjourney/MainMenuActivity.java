@@ -60,7 +60,7 @@ public class MainMenuActivity extends AppCompatActivity {
         // main menu music :)
         player = MediaPlayer.create(this, R.raw.main_menu);
         player.setLooping(true);
-        player.setVolume(15, 15);
+        player.setVolume(100, 100);
         player.start();
     }
 
