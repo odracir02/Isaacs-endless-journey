@@ -41,19 +41,19 @@ public class MainMenuActivity extends AppCompatActivity {
         player.start();
     }
 
-    public void start(View view) {
+    public void intentStart(View view) {
         Intent intent = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
         player.pause();
     }
 
-    public void unlocks(View view) {
+    public void intentUnlocks(View view) {
         Intent intent = new Intent(getApplicationContext(),UnlocksActivity.class);
         startActivity(intent);
         player.pause();
     }
 
-    public void settings(View view) {
+    public void intentSettings(View view) {
         Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
         startActivity(intent);
         player.pause();

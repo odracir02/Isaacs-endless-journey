@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.isaacsendlessjourney.db.DatabaseHandler;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSettings;
 
     // Firebase
-    FirebaseFirestore db;
+    private DatabaseHandler db;
 
     private MediaPlayer player;
 
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         btnSettings = findViewById(R.id.btnSettings);
 
         // Firebase
-        db = FirebaseFirestore.getInstance();
+        db = DatabaseHandler.getInstance();
 
         // main menu music :)
         player = MediaPlayer.create(this, R.raw.cathedral);
@@ -129,9 +130,11 @@ public class MainActivity extends AppCompatActivity {
         saveData.put("coins_click", 50);
         saveData.put("multiplier", 20);
 
-        this.db.collection("user_data")
+        this.db.saveUserData("test", saveData);
+
+        /*this.db.collection("user_data")
                 .document("test")
-                .update(saveData);
+                .update(saveData);*/
 
     }
 
@@ -145,9 +148,11 @@ public class MainActivity extends AppCompatActivity {
         saveData.put("coins_click", this.clickValue);
         saveData.put("multiplier", this.clickMultiplier);
 
-        this.db.collection("user_data")
+        this.db.saveUserData("test", saveData);
+
+        /*this.db.collection("user_data")
                 .document("test")
-                .set(saveData);
+                .set(saveData);*/
     }
 
     /*
