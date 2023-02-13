@@ -1,7 +1,22 @@
 package com.example.isaacsendlessjourney.db;
 
+import static android.content.ContentValues.TAG;
+
+import android.content.Intent;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+
+import com.example.isaacsendlessjourney.MainMenuActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class DatabaseHandler {
@@ -13,8 +28,51 @@ public class DatabaseHandler {
         this.db = FirebaseFirestore.getInstance();
     }
 
-    public boolean loginUser(String user, String password) {
-        return true;
+    public boolean loginUser(String username, String password) {
+        DocumentReference docRef = db.collection("user_data")
+                .document(username);
+
+        boolean userLogged = false;
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    // If user exists
+                    if (document.exists()) {
+                        Map<String, Object> data = document.getData();
+
+                        // If password is correct
+                        if(data.get("username").equals(username) && data.get("password").equals(password)) {
+                            System.out.println("user logged");
+                        }
+                    } else {
+                        // If user not exists, create user
+                        System.out.println("Not user found, creating...");
+                        createUser(username, password);
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
+        return userLogged ? true : false;
+    }
+
+    public void createUser(String username, String password) {
+        Map<String, Object> saveData = new HashMap<>();
+        saveData.put("username", username);
+        saveData.put("password", password);
+        saveData.put("coins", 0);
+        saveData.put("coins_click", 1);
+        saveData.put("multiplier", 1);
+
+        this.db.collection("user_data")
+                .document(username)
+                .set(saveData);
+
+        System.out.println("User created!");
     }
 
     public void saveUserData(String document, Map<String, Object> data) {
