@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.example.isaacsendlessjourney.MainMenuActivity;
+import com.example.isaacsendlessjourney.items.ItemsHandler;
 import com.example.isaacsendlessjourney.userdata.UserDataHandler;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -17,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -89,6 +92,26 @@ public class DatabaseHandler {
         this.db.collection("user_data")
                 .document(UserDataHandler.getInstance().getUsername())
                 .set(saveData);
+    }
+
+    public void getAllItems() {
+        this.db.collection("items")
+            .get()
+            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                    if (task.isSuccessful()) {
+                        Map<String, Object> items = new HashMap<String, Object>();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            items.put(document.getId(), document.getData());
+                        }
+
+                        ItemsHandler.getInstance().updateLocalItems(items);
+                    } else {
+                        Log.d(TAG, "Error getting documents: ", task.getException());
+                    }
+                }
+            });
     }
 
     public static DatabaseHandler getInstance() {

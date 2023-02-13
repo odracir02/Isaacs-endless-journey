@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.isaacsendlessjourney.db.DatabaseHandler;
+import com.example.isaacsendlessjourney.items.ItemsHandler;
+
 public class ShopActivity extends AppCompatActivity {
 
     @Override
@@ -30,6 +33,10 @@ public class ShopActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
+    }
+
+    public void getAngelItem(View view) {
+        ItemsHandler.getInstance().getAllItems();
     }
 
     /*

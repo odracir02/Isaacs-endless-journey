@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.isaacsendlessjourney.db.DatabaseHandler;
+import com.example.isaacsendlessjourney.items.ItemsHandler;
 import com.example.isaacsendlessjourney.userdata.UserDataHandler;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -85,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
         this.clickMultiplier = userDataHandler.getMultiplier();
 
         tvCoins.setText(String.valueOf(this.coins));
+
+        // load items
+        ItemsHandler.getInstance().getAllItems();
     }
 
     /*

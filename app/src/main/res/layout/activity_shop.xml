@@ -78,6 +78,7 @@
                         android:layout_marginRight="5px"
                         android:backgroundTint="#644029"
                         android:fontFamily="@font/isaacfont"
+                        android:onClick="getAngelItem"
                         android:text="69¢" />
                 </LinearLayout>
 
