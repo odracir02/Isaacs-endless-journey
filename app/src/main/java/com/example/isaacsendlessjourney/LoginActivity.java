@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.isaacsendlessjourney.db.DatabaseHandler;
+import com.example.isaacsendlessjourney.userdata.UserDataHandler;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -50,9 +51,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void loginUser(View view) {
-        boolean isUserLogged = db.loginUser(etUsername.getText().toString(), etPassword.getText().toString());
+        db.loginUser(etUsername.getText().toString(), etPassword.getText().toString());
 
-        if(isUserLogged) {
+        if(UserDataHandler.getInstance() != null) {
             Intent intent = new Intent(getApplicationContext(),MainMenuActivity.class);
             startActivity(intent);
         }

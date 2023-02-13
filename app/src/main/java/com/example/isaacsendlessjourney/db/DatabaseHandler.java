@@ -8,6 +8,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.isaacsendlessjourney.MainMenuActivity;
+import com.example.isaacsendlessjourney.userdata.UserDataHandler;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,7 +29,7 @@ public class DatabaseHandler {
         this.db = FirebaseFirestore.getInstance();
     }
 
-    public boolean loginUser(String username, String password) {
+    public void loginUser(String username, String password) {
         DocumentReference docRef = db.collection("user_data")
                 .document(username);
 
@@ -44,6 +45,7 @@ public class DatabaseHandler {
 
                         // If password is correct
                         if(data.get("username").equals(username) && data.get("password").equals(password)) {
+                            UserDataHandler.getInstance().create(data.get("username").toString(), data.get("coins").toString(), data.get("coins_click").toString(), data.get("multiplier").toString());
                             System.out.println("user logged");
                         }
                     } else {
@@ -56,8 +58,6 @@ public class DatabaseHandler {
                 }
             }
         });
-
-        return userLogged ? true : false;
     }
 
     public void createUser(String username, String password) {
