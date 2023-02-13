@@ -46,7 +46,7 @@ public class DatabaseHandler {
 
                         // If password is correct
                         if(data.get("username").equals(username) && data.get("password").equals(password)) {
-                            UserDataHandler.getInstance().create(data.get("username").toString(), data.get("coins").toString(), data.get("coins_click").toString(), data.get("multiplier").toString());
+                            UserDataHandler.getInstance().create(data.get("username").toString(), data.get("password").toString(), data.get("coins").toString(), data.get("coins_click").toString(), data.get("multiplier").toString());
                             System.out.println("User logged!");
                         } else {
                             System.out.println("Wrong password");
@@ -78,10 +78,17 @@ public class DatabaseHandler {
         System.out.println("User created!");
     }
 
-    public void saveUserData(String document, Map<String, Object> data) {
+    public void saveUserData() {
+        Map<String, Object> saveData = new HashMap<>();
+        saveData.put("username", UserDataHandler.getInstance().getUsername());
+        saveData.put("password", UserDataHandler.getInstance().getPassword());
+        saveData.put("coins", UserDataHandler.getInstance().getCoins());
+        saveData.put("coins_click", UserDataHandler.getInstance().getClickValue());
+        saveData.put("multiplier", UserDataHandler.getInstance().getMultiplier());
+
         this.db.collection("user_data")
-                .document(document)
-                .set(data);
+                .document(UserDataHandler.getInstance().getUsername())
+                .set(saveData);
     }
 
     public static DatabaseHandler getInstance() {

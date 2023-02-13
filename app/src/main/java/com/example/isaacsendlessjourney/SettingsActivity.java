@@ -12,9 +12,15 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.isaacsendlessjourney.db.DatabaseHandler;
+import com.example.isaacsendlessjourney.userdata.UserDataHandler;
+
 public class SettingsActivity extends AppCompatActivity {
     private ImageView ivProhibido;
     private boolean musicOn;
+
+    // Bundle
+    Bundle b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,9 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         ivProhibido = findViewById(R.id.imgProhibido);
+
+        // Bundle
+        b = getIntent().getExtras();
     }
 
     public void toggleMusic(View view) {
@@ -47,6 +56,13 @@ public class SettingsActivity extends AppCompatActivity {
             ivProhibido.setVisibility(view.VISIBLE);
             musicOn = true;
         }
+    }
+
+    public void saveData(View view) {
+        UserDataHandler.getInstance().setCoins(b.getInt("coins"));
+        UserDataHandler.getInstance().setClickValue(b.getInt("clickValue"));
+        UserDataHandler.getInstance().setMultiplier(b.getInt("clickMultiplier"));
+        DatabaseHandler.getInstance().saveUserData();
     }
 
     /*

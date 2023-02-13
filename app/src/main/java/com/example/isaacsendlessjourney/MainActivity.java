@@ -17,15 +17,16 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.isaacsendlessjourney.db.DatabaseHandler;
+import com.example.isaacsendlessjourney.userdata.UserDataHandler;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    private int coins = 0;
-    private int clickValue = 43531245;
-    private int clickMultiplier = 1;
+    private int coins;
+    private int clickValue;
+    private int clickMultiplier;
 
     private TextView tvCoins;
     private Button btnClicker;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Firebase
     private DatabaseHandler db;
+    private UserDataHandler userDataHandler;
 
     private MediaPlayer player;
 
@@ -74,6 +76,15 @@ public class MainActivity extends AppCompatActivity {
         player.setLooping(true);
         player.setVolume(25, 25);
         player.start();
+
+        // get user data
+        userDataHandler = UserDataHandler.getInstance();
+
+        this.coins = userDataHandler.getCoins();
+        this.clickValue = userDataHandler.getClickValue();
+        this.clickMultiplier = userDataHandler.getMultiplier();
+
+        tvCoins.setText(String.valueOf(this.coins));
     }
 
     /*
@@ -81,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
     */
     private String parseCoins(int coins) {
         String strCoin = String.valueOf(coins);
-        System.out.println(strCoin);
         String finalStr;
 
         // Million
@@ -123,26 +133,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void intentShop(View view) {
-        /*Intent intent = new Intent(getApplicationContext(),ShopActivity.class);
-        startActivity(intent);*/
-        Map<String, Object> saveData = new HashMap<>();
-        saveData.put("coins", 15);
-        saveData.put("coins_click", 50);
-        saveData.put("multiplier", 20);
-
-        this.db.saveUserData("test", saveData);
-
-        /*this.db.collection("user_data")
-                .document("test")
-                .update(saveData);*/
-
+        Intent intent = new Intent(getApplicationContext(),ShopActivity.class);
+        startActivity(intent);
     }
 
     public void intentSettings(View view) {
-        /*Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
-        startActivity(intent);*/
+        Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
+        Bundle b = new Bundle();
+        b.putInt("coins", this.coins);
+        b.putInt("clickValue", this.clickValue);
+        b.putInt("clickMultiplier", this.clickMultiplier);
+        intent.putExtras(b);
+        startActivity(intent);
 
-        // Create a new user with a first and last name
+        /* Create a new user with a first and last name
         Map<String, Object> saveData = new HashMap<>();
         saveData.put("coins", this.coins);
         saveData.put("coins_click", this.clickValue);
@@ -150,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.db.saveUserData("test", saveData);
 
-        /*this.db.collection("user_data")
+        this.db.collection("user_data")
                 .document("test")
                 .set(saveData);*/
     }
