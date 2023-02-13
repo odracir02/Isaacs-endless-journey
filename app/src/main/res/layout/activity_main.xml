@@ -5,7 +5,7 @@
     android:id="@+id/layoutMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/scarred_womb"
+    android:background="@drawable/cathedral"
     tools:context=".MainActivity">
 
 
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/azazel" />
+        app:srcCompat="@drawable/lost" />
 
     <Button
         android:id="@+id/btnClicker"

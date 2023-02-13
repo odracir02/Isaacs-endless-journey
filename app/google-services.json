@@ -2,6 +2,7 @@
   "project_info": {
     "project_number": "316954190581",
     "project_id": "isaacs-endless-journey",
+    "firebase_url": "https://isaacs-endless-journey-default-rtdb.europe-west1.firebasedatabase.app/",
     "storage_bucket": "isaacs-endless-journey.appspot.com"
   },
   "client": [

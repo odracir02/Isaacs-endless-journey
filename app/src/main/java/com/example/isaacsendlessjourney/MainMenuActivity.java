@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainMenuActivity extends AppCompatActivity {
     GoogleSignInClient mGoogleSignInClient;
     GoogleSignInOptions gso;
+
+    private MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,12 @@ public class MainMenuActivity extends AppCompatActivity {
 
         // Build a GoogleSignInClient with the options specified by gso.
         this.mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        // main menu music :)
+        player = MediaPlayer.create(this, R.raw.main_menu);
+        player.setLooping(true);
+        player.setVolume(15, 15);
+        player.start();
     }
 
     @Override
@@ -68,16 +77,19 @@ public class MainMenuActivity extends AppCompatActivity {
     public void start(View view) {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, 1);
+        player.pause();
     }
 
     public void unlocks(View view) {
         Intent intent = new Intent(getApplicationContext(),UnlocksActivity.class);
         startActivity(intent);
+        player.pause();
     }
 
     public void settings(View view) {
         Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
         startActivity(intent);
+        player.pause();
     }
 
     @Override
