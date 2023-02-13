@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.isaacsendlessjourney.db.DatabaseHandler;
 import com.example.isaacsendlessjourney.userdata.UserDataHandler;
@@ -53,9 +55,12 @@ public class LoginActivity extends AppCompatActivity {
     public void loginUser(View view) {
         db.loginUser(etUsername.getText().toString(), etPassword.getText().toString());
 
-        if(UserDataHandler.getInstance() != null) {
+        if(UserDataHandler.getInstance().getUsername() != null) {
             Intent intent = new Intent(getApplicationContext(),MainMenuActivity.class);
             startActivity(intent);
+        } else {
+            Toast.makeText(getApplicationContext(), "Doble click",
+                    Toast.LENGTH_LONG).show();
         }
     }
 

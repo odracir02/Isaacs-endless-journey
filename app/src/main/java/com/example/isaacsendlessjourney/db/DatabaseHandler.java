@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -46,7 +47,9 @@ public class DatabaseHandler {
                         // If password is correct
                         if(data.get("username").equals(username) && data.get("password").equals(password)) {
                             UserDataHandler.getInstance().create(data.get("username").toString(), data.get("coins").toString(), data.get("coins_click").toString(), data.get("multiplier").toString());
-                            System.out.println("user logged");
+                            System.out.println("User logged!");
+                        } else {
+                            System.out.println("Wrong password");
                         }
                     } else {
                         // If user not exists, create user
