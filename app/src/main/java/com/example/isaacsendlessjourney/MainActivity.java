@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     // Firebase
     FirebaseFirestore db;
 
+    private MediaPlayer player;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Hide navbar
@@ -71,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
 
         // Firebase
         db = FirebaseFirestore.getInstance();
+
+        // main menu music :)
+        player = MediaPlayer.create(this, R.raw.cathedral);
+        player.setLooping(true);
+        player.setVolume(25, 25);
+        player.start();
     }
 
     /*

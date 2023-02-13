@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class MainMenuActivity extends AppCompatActivity {
+    private MediaPlayer player;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Hide navbar
@@ -30,21 +33,30 @@ public class MainMenuActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        // main menu music :)
+        player = MediaPlayer.create(this, R.raw.main_menu);
+        player.setLooping(true);
+        player.setVolume(100, 100);
+        player.start();
     }
 
     public void start(View view) {
         Intent intent = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
+        player.pause();
     }
 
     public void unlocks(View view) {
         Intent intent = new Intent(getApplicationContext(),UnlocksActivity.class);
         startActivity(intent);
+        player.pause();
     }
 
     public void settings(View view) {
         Intent intent = new Intent(getApplicationContext(),SettingsActivity.class);
         startActivity(intent);
+        player.pause();
     }
 
     /*

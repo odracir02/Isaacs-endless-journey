@@ -3,11 +3,14 @@ package com.example.isaacsendlessjourney;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -30,6 +33,21 @@ public class SettingsActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+
+
+    }
+
+    ImageView imageView = findViewById(R.id.imgProhibido);
+    final boolean[] invisible = {true};
+    public void Music(View view) {
+        if(invisible[0]){
+            imageView.setVisibility(view.INVISIBLE);
+            invisible[0] = false;
+        }else{
+            imageView.setVisibility(view.VISIBLE);
+            invisible[0] = true;
+        }
     }
 
     /*
