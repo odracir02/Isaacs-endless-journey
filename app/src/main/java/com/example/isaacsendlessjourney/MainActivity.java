@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         tvCoins.setText(String.valueOf(this.coins));
 
         // load items
-        ItemsHandler.getInstance().getAllItems();
+        ItemsHandler.getInstance().updateLocalItems();
     }
 
     /*

@@ -106,7 +106,7 @@ public class DatabaseHandler {
                             items.put(document.getId(), document.getData());
                         }
 
-                        ItemsHandler.getInstance().updateLocalItems(items);
+                        //ItemsHandler.getInstance().updateLocalItems(items);
                     } else {
                         Log.d(TAG, "Error getting documents: ", task.getException());
                     }

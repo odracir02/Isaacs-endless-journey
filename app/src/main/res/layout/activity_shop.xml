@@ -138,6 +138,7 @@
                         android:layout_marginRight="5px"
                         android:backgroundTint="#644029"
                         android:fontFamily="@font/isaacfont"
+                        android:onClick="getDevilItem"
                         android:text="69¢" />
                 </LinearLayout>
 
@@ -196,6 +197,7 @@
                         android:layout_marginRight="5px"
                         android:backgroundTint="#644029"
                         android:fontFamily="@font/isaacfont"
+                        android:onClick="getItemItem"
                         android:text="69¢" />
                 </LinearLayout>
 
@@ -253,6 +255,7 @@
                         android:layout_marginRight="5px"
                         android:backgroundTint="#644029"
                         android:fontFamily="@font/isaacfont"
+                        android:onClick="getShopItem"
                         android:text="69¢" />
                 </LinearLayout>
 

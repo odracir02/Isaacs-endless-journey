@@ -12,6 +12,8 @@ import android.view.WindowManager;
 import com.example.isaacsendlessjourney.db.DatabaseHandler;
 import com.example.isaacsendlessjourney.items.ItemsHandler;
 
+import java.util.Map;
+
 public class ShopActivity extends AppCompatActivity {
 
     @Override
@@ -36,8 +38,20 @@ public class ShopActivity extends AppCompatActivity {
     }
 
     public void getAngelItem(View view) {
-        ItemsHandler.getInstance().getAllItems();
+        Map<String, String> item = ItemsHandler.getInstance().getItemFromPool("angel");
     }
+    public void getDevilItem(View view) {
+        Map<String, String> item = ItemsHandler.getInstance().getItemFromPool("devil");
+    }
+
+    public void getItemItem(View view) {
+        Map<String, String> item = ItemsHandler.getInstance().getItemFromPool("item");
+    }
+
+    public void getShopItem(View view) {
+        Map<String, String> item = ItemsHandler.getInstance().getItemFromPool("boss");
+    }
+
 
     /*
      * UTILS
