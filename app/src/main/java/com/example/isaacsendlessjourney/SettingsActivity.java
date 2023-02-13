@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class SettingsActivity extends AppCompatActivity {
+    private ImageView ivProhibido;
+    private boolean musicOn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,19 +36,16 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-
-
+        ivProhibido = findViewById(R.id.imgProhibido);
     }
 
-    ImageView imageView = findViewById(R.id.imgProhibido);
-    final boolean[] invisible = {true};
-    public void Music(View view) {
-        if(invisible[0]){
-            imageView.setVisibility(view.INVISIBLE);
-            invisible[0] = false;
-        }else{
-            imageView.setVisibility(view.VISIBLE);
-            invisible[0] = true;
+    public void toggleMusic(View view) {
+        if(musicOn) {
+            ivProhibido.setVisibility(view.INVISIBLE);
+            musicOn = false;
+        } else {
+            ivProhibido.setVisibility(view.VISIBLE);
+            musicOn = true;
         }
     }
 

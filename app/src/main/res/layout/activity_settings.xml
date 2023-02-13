@@ -193,7 +193,7 @@
         android:layout_width="95dp"
         android:layout_height="87dp"
         android:background="@android:color/transparent"
-        android:onClick="Music"
+        android:onClick="toggleMusic"
         android:text="."
         android:textColor="#00FFFFFF"
         tools:layout_editor_absoluteX="152dp"

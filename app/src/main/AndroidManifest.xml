@@ -16,6 +16,10 @@
         android:theme="@style/Theme.IsaacsEndlessJourney"
         tools:targetApi="31">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Holo.Dialog" />
+        <activity
             android:name=".ShopActivity"
             android:exported="false" />
         <activity
