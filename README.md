@@ -1,7 +1,3 @@
 # Isaac project
 
-asdasc
-acascasasfaf
-ljsadhfkjhsadf
-sadfkasjdfsad
-fasdfkkasdfsadf
+[Isaac Endless Journey](www.google.es)
