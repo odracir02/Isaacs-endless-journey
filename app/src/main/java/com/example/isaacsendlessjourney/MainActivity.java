@@ -121,7 +121,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void click(View view) {
-        coins += clickValue * clickMultiplier;
+        this.coins = UserDataHandler.getInstance().getCoins() + (UserDataHandler.getInstance().getClickValue() * UserDataHandler.getInstance().getMultiplier());
+        UserDataHandler.getInstance().setCoins(this.coins);
         tvCoins.setText(parseCoins(coins));
     }
 
@@ -137,6 +138,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void intentShop(View view) {
+        UserDataHandler.getInstance().setCoins(this.coins);
+
         Intent intent = new Intent(getApplicationContext(),ShopActivity.class);
         startActivity(intent);
     }

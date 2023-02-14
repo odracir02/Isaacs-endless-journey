@@ -58,9 +58,6 @@ public class LoginActivity extends AppCompatActivity {
         if(UserDataHandler.getInstance().getUsername() != null) {
             Intent intent = new Intent(getApplicationContext(),MainMenuActivity.class);
             startActivity(intent);
-        } else {
-            Toast.makeText(getApplicationContext(), "Doble click",
-                    Toast.LENGTH_LONG).show();
         }
     }
 

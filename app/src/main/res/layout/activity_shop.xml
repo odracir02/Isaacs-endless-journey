@@ -72,14 +72,13 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/btnAngel"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginRight="5px"
                         android:backgroundTint="#644029"
                         android:fontFamily="@font/isaacfont"
-                        android:onClick="getAngelItem"
-                        android:text="69¢" />
+                        android:onClick="getAngelItem" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -132,14 +131,13 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/btnDevil"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginRight="5px"
                         android:backgroundTint="#644029"
                         android:fontFamily="@font/isaacfont"
-                        android:onClick="getDevilItem"
-                        android:text="69¢" />
+                        android:onClick="getDevilItem" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -191,14 +189,14 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/btnItem"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginRight="5px"
                         android:backgroundTint="#644029"
                         android:fontFamily="@font/isaacfont"
                         android:onClick="getItemItem"
-                        android:text="69¢" />
+                        android:text="" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -249,14 +247,14 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/btnShop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginRight="5px"
                         android:backgroundTint="#644029"
                         android:fontFamily="@font/isaacfont"
                         android:onClick="getShopItem"
-                        android:text="69¢" />
+                        android:text="" />
                 </LinearLayout>
 
             </LinearLayout>

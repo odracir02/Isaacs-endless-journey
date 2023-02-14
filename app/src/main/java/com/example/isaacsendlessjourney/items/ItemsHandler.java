@@ -117,12 +117,8 @@ public class ItemsHandler {
         List<Map<String, String>> filteredItems = new ArrayList<Map<String, String>>();
 
         for(Map<String, String> item : this.itemsDB) {
-            if(item.get("pool") == pool) {
+            if(item.get("pool").equals(pool)) {
                 filteredItems.add(item);
-                System.out.println("Name: " + item.get("name"));
-                System.out.println("Desc: " + item.get("description"));
-                System.out.println("Pool: " + item.get("pool"));
-                System.out.println("Qual: " + item.get("quality"));
             }
         }
 

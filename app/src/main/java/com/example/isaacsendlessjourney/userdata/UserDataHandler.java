@@ -7,6 +7,7 @@ public class UserDataHandler {
     private int coins;
     private int clickValue;
     private int multiplier;
+    private int numberOfBuys;
 
     public void create(String username, String password, String coins, String clickValue, String multiplier) {
         this.username = username;
@@ -14,6 +15,8 @@ public class UserDataHandler {
         this.coins = Integer.parseInt(coins);
         this.clickValue = Integer.parseInt(clickValue);
         this.multiplier = Integer.parseInt(multiplier);
+
+        this.numberOfBuys = 1;
     }
 
     public String getUsername() {
@@ -46,6 +49,14 @@ public class UserDataHandler {
 
     public void setMultiplier(int multiplier) {
         this.multiplier = multiplier;
+    }
+
+    public int getNumberOfBuys() {
+        return numberOfBuys;
+    }
+
+    public void setNumberOfBuys(int numberOfBuys) {
+        this.numberOfBuys = numberOfBuys;
     }
 
     public static UserDataHandler getInstance() {
